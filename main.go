@@ -24,10 +24,7 @@ func checksum(id string) string {
 		n, _ := strconv.Atoi(string(id[i]))
 		sum += n * (13 - i)
 	}
-	r := 11 - (sum % 11)
-	if r > 9 {
-		r -= 10
-	}
+	r := 11 - (sum%11)%10
 	return strconv.Itoa(r)
 }
 
